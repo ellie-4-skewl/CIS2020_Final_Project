@@ -21,8 +21,7 @@ To recreate this project, you will need the following:
 Step 1: Set up Pi
 -
 
-Set up your Pi and breadboard like in the following images.
-
+Set up your Pi and breadboard like in the screenshots posted.
 
 
 Step 2: Testing
