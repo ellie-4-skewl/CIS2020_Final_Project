@@ -4,10 +4,12 @@ Resources
 Tutorial
 
 "Simon Says"
+-
 
 The original intent with this project was to create a functioning game of Simon where the player must memorize the pattern in which certain lights would come on, gradually increasing the difficulty by adding one more light flash to the puzzle. However, after some development, the game instead turned into being a more rudimentary version where all 4 lights will flash (one right after the other) and the player must then press each corresponding button after the full sequence is complete. As you'll see, however, this didn't quite go to plan either.
 
 Materials
+-
 
 To recreate this project, you will need the following:
   * Raspberry Pi
@@ -17,12 +19,14 @@ To recreate this project, you will need the following:
   * LEDs
 
 Step 1: Set up Pi
+-
 
 Set up your Pi and breadboard like in the following images.
 
 
 
 Step 2: Testing
+-
 
 During this step, the most import thing that we're looking at here is making sure that all of our physcal elements are working - that way we'll know in later steps that the code is faulty instead of the machine. 
 
@@ -41,6 +45,7 @@ while True:
 After this, simply test each LED lighting up due to a button press.
 
 Step 3: Label leds and buttons
+-
 
 This step will be crucial for our next step! 
 ```
@@ -49,6 +54,7 @@ buttons = [Button(13), Button(6), Button(22), Button(17)]
 ```
 
 Step 4: Create sequences
+-
 
 Next, you will use a sequence to determine a random sequence in which the lights will flash.
 
@@ -69,6 +75,7 @@ for i in range(4):
     sequence.append(leds.index(x))
 ```
 Step 5: Second Sequence
+-
 
 Next, you must create a second sequence for your buttons. We will use this to "link up" which LED corresponds to which button.
 
@@ -81,6 +88,7 @@ def output(button):
 ```
 
 Step 6: ???
+-
 
 After that, we tried implementing an elseif statement to make sure that the program would know if the player pressed the right button for the right LED. However, we ran into the issue where the button would instead simply wait until the correct button was pressed and would not react to the players putting in an incorrect pattern.
 
