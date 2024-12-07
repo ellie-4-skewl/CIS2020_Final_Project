@@ -18,13 +18,13 @@ To recreate this project, you will need the following:
 
 Step 1: Set up Pi
 
-
+Set up your Pi and breadboard like in the image.
 
 Step 2: Testing
 
 During this step, the most import thing that we're looking at here is making sure that all of our physcal elements are working - that way we'll know in later steps that the code is faulty instead of the machine. 
 
-You can use simple commands to manually check whether or not each 
+You can use simple commands to manually check whether or not each button is working.
 ```python
 from gpiozero import Button
 
@@ -36,7 +36,75 @@ while True:
     else:
         print("Button is not pressed")
 ```
+After this, simply test each LED lighting up due to a button press.
 
-Step 3:
+Step 3: Label leds and buttons
 
-Step 4:
+This step will be crucial for our next step! 
+```
+leds = [LED(26), LED(5), LED(27), LED(4)]
+buttons = [Button(13), Button(6), Button(22), Button(17)]
+```
+
+Step 4: Create sequences
+
+Next, you will use a sequence to determine a random sequence in which the lights will flash.
+
+```
+sequence= []
+
+for i in range(4):
+    #choose 1 led
+    #turn led on
+    #sleep
+    #turn led off
+    x = choice(leds)
+    x.on()
+    sleep(0.5)
+    x.off()
+    sleep(0.25)
+    
+    sequence.append(leds.index(x))
+```
+Step 5: Second Sequence
+
+Next, you must create a second sequence for your buttons. We will use this to "link up" which LED corresponds to which button.
+
+```
+sequence2 = []
+
+def output(button):
+    print("Button Pressed", buttons.index(button))
+    sequence2.append(buttons.index(button))
+```
+
+Step 6: ???
+
+After that, we tried implementing an elseif statement to make sure that 
+
+```
+for i in sequence:
+    #wait for button press
+    #buttons[i].wait_for_press()
+    #if buttons[i].is_pressed:
+        #print("correct")
+    if buttons[0].is_pressed and buttons[0] ==buttons[i]:
+        print("correct")
+    elif buttons[1].is_pressed and buttons[1] ==buttons[i]:
+        print("correct")
+    elif buttons[2].is_pressed and buttons[2] ==buttons[i]:
+        print("correct")
+    elif buttons[3].is_pressed and buttons[3] ==buttons[i]:
+        print("correct")
+    elif buttons[0].is_pressed and buttons[0] !=buttons[i]:
+        print("incorrect")
+    elif buttons[1].is_pressed and buttons[1] !=buttons[i]:
+        print("incorrect")
+    elif buttons[2].is_pressed and buttons[2] !=buttons[i]:
+        print("incorrect")
+    elif buttons[3].is_pressed and buttons[3] !=buttons[i]:
+        print("incorrect")
+        
+ 
+    sleep(0.25)
+```
