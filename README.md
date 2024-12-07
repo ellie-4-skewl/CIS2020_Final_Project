@@ -18,7 +18,9 @@ To recreate this project, you will need the following:
 
 Step 1: Set up Pi
 
-Set up your Pi and breadboard like in the image.
+Set up your Pi and breadboard like in the following images.
+
+
 
 Step 2: Testing
 
@@ -80,7 +82,7 @@ def output(button):
 
 Step 6: ???
 
-After that, we tried implementing an elseif statement to make sure that 
+After that, we tried implementing an elseif statement to make sure that the program would know if the player pressed the right button for the right LED. However, we ran into the issue where the button would instead simply wait until the correct button was pressed and would not react to the players putting in an incorrect pattern.
 
 ```
 for i in sequence:
@@ -108,3 +110,6 @@ for i in sequence:
  
     sleep(0.25)
 ```
+
+
+This is about as far as we got, thank you for checking out this project!
